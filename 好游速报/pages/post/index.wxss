@@ -1,0 +1,32 @@
+/* pages/post/index.wxss */
+.container_box{
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    margin: 20px;
+}
+.content{
+    border-top: 1px solid #b6b0b0;
+    height: auto;
+}
+.image-container {
+    display: flex;
+    margin: 20px;
+  }
+  .image-item {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 10px;
+  }
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  .button-item {
+    flex: 1;
+    margin: 0 10px;
+    border: 1px solid;
+    border-radius: 20px;
+  }

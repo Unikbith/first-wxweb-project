@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="header">
+    <text>我的评论</text>
+  </view>
+
+  <block wx:if="{{userComments.length === 0}}">
+    <view class="no-comment">暂无评论</view>
+  </block>
+
+  <block wx:else>
+    <view class="comment-list">
+      <block wx:for="{{userComments}}" wx:key="index">
+        <view class="comment-item">
+          <text class="comment-user">{{item.user}}:</text>
+          <text class="comment-content">{{item.content}}</text>
+          <text class="comment-time">{{item.time}}</text>
+          <navigator url="/gameList/new/index?id={{item.postId}}" class="view-post">查看帖子</navigator>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>

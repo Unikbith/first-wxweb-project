@@ -1,0 +1,23 @@
+<view class="header">
+    <text>我的收藏</text>
+  </view>
+
+<block wx:if="{{myBookMarks.length === 0}}">
+    <view class="no-comment">暂无收藏</view>
+</block>
+
+<block wx:for="{{myBookMarks}}" wx:key="id">
+  <navigator url="/gameList/new/index?id={{item.id}}">
+    <view class="container">
+      <view class="container_box">
+        <block wx:for="{{item.imageIcon}}" wx:key="index">
+          <image src="{{item}}" mode="aspectFit" class="gameImage" bind:tap="previewImage" data-url="{{item}}"/>
+        </block>
+        <text class="news">新闻推荐</text>
+        <view class="content">
+          <text>{{item.title}}</text>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</block>

@@ -1,0 +1,7 @@
+.comment-input input {
+    flex: 1;
+    margin: 10px 10px;
+  }
+.comment-input button {
+    margin: 0 10px;
+  }

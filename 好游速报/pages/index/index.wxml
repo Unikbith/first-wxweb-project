@@ -1,0 +1,39 @@
+<!-- pages/index/index.wxml -->
+<view style="margin-top: 10px;">
+  <swiper class="container_swiper" autoplay indicator-dots indicator-active-color="#DCDCDC" circular>
+    <navigator url="/gameList/米塔/index">
+      <swiper-item>
+        <image src="/images/imageIcon/米塔.jpg" mode="aspectFit" class="swiper_image" bind:tap="previewImage" data-url="/images/imageIcon/米塔.jpg"/>
+        <view class="text_overlay">米塔</view>
+      </swiper-item>
+    </navigator>
+    <navigator url="/gameList/三角洲行动/index">
+      <swiper-item>
+        <image src="/images/imageIcon/三角洲行动.jpg" mode="aspectFit" class="swiper_image" bind:tap="previewImage" data-url="/images/imageIcon/三角洲行动.jpg"/>
+        <view class="text_overlay">三角洲行动</view>
+      </swiper-item>
+    </navigator>
+    <navigator url="/gameList/无畏契约/index">
+      <swiper-item>
+        <image src="/images/imageIcon/无畏契约.jpg" mode="aspectFit" class="swiper_image" bind:tap="previewImage" data-url="/images/imageIcon/无畏契约.jpg"/>
+        <view class="text_overlay">无畏契约</view>
+      </swiper-item>
+    </navigator>
+  </swiper>
+</view>
+
+<block wx:for="{{postList}}" wx:key="id">
+  <navigator url="/gameList/new/index?id={{item.id}}">
+    <view class="container">
+      <view class="container_box">
+        <block wx:for="{{item.imageIcon}}" wx:key="index">
+          <image src="{{item}}" mode="aspectFit" class="gameImage" catch:tap="previewImage" data-url="{{item}}"/>
+        </block>
+        <text class="news">新闻推荐</text>
+        <view class="content">
+          <text>{{item.title}}</text>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</block>

@@ -1,0 +1,57 @@
+
+<view class="gameList_continer">
+  <view class="gameList_title">米塔:你的赛博女友</view>
+  <view class="gameList_continer_box">
+    <swiper autoplay indicator-dots indicator-active-color="#DCDCDC" circular class="swiper_container">
+    <swiper-item>
+        <image src="/images/米塔/1.jpg" mode="aspectFit" class="swiper_image" bind:tap="previewImage" data-url="/images/米塔/1.jpg"/>
+    </swiper-item>
+    <swiper-item>
+        <image src="/images/米塔/2.jpg" mode="aspectFit" class="swiper_image" bind:tap="previewImage" data-url="/images/米塔/2.jpg"/>
+    </swiper-item>
+    <swiper-item>
+        <image src="/images/米塔/3.jpg" mode="aspectFit" class="swiper_image" bind:tap="previewImage" data-url="/images/米塔/3.jpg"/>
+    </swiper-item>
+    <swiper-item>
+        <image src="/images/米塔/4.jpg" mode="aspectFit" class="swiper_image" bind:tap="previewImage" data-url="/images/米塔/4.jpg"/>
+    </swiper-item>
+    </swiper>
+  </view>
+  <view class="gameList_content">
+  <text style="height: auto;  width: 345px;" user-select>
+    在2024年末，心理恐怖游戏《米塔》的出现，又给了玩家们一点“二次元老婆震撼”。这款由俄罗斯独立开发者制作的游戏，如今在Steam已经获得超过4.4万评价，并且“好评如潮”（98%好评）。
+    虽然《米塔》在登陆Steam前就已经在itch.io上发布了一个试玩版，当时这款类似《心跳文学部》的顶着“恋爱”的皮，内部却是恐怖内核的游戏就获得了很多玩家的关注。但是在Steam发售之后，游戏还是令很多玩家当了“程序员”，并且感叹“二次元正统在毛子”。游戏的成功令两位俄罗斯开发者老哥也感叹在游戏发售前，他们从未料到游戏能够如此受欢迎。除了继续打磨游戏与开发计划中的内容外，他们也会思考未来的计划。
+    《米塔》中玩家将作为一个“玩游戏”的男程序员被传送到“二次元老婆”米塔的游戏世界，在遭遇Bug“疯狂米塔”强烈的“爱意”与各种打破第四面墙的各种诡异事件后，玩家需要结识各种不同版本的“米塔”并寻找逃离的方法。游戏目前还没有开发完成，希望后续还能有更多米塔们的故事。
+  </text>
+    </view>
+</view>
+<button bindtap="bookMark" data-id="{{post.id}}">收藏</button>
+
+<view class="comment">
+  <text style="margin-left: 10px;">评论 {{commentNum}}</text>
+</view>
+
+<block wx:if="{{commentNum === 0}}">
+  <view class="no-comment">暂无更多评论</view>
+</block>
+
+<block wx:else>
+  <view class="comment-list">
+    <block wx:for="{{comments}}" wx:key="index">
+      <view class="comment-item">
+        <text class="comment-user">{{item.user}}:</text>
+        <text class="comment-content">{{item.content}}</text>
+        <text class="comment-time">{{item.time}}</text>
+      </view>
+    </block>
+  </view>
+</block>
+
+<view class="comment-input">
+  <input
+    placeholder="请输入评论"
+    bindinput="onCommentInput"
+    value="{{commentContent}}"
+  />
+  <button bindtap="submitComment" size="mini">发送</button>
+</view>

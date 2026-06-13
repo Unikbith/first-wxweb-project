@@ -1,0 +1,33 @@
+.container {
+    padding: 20px;
+  }
+  .no-comment {
+    text-align: center;
+    color: #999;
+    margin-top: 50px;
+  }
+  .comment-list {
+    margin-top: 10px;
+  }
+  .comment-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+  }
+  .comment-user {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  .comment-content {
+    color: #333;
+  }
+  .comment-time {
+    font-size: 12px;
+    color: #999;
+    margin-left: 10px;
+  }
+  .view-post {
+    color: #007bff;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+  }

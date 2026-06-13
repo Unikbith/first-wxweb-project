@@ -1,0 +1,47 @@
+<view class="gameList_continer">
+  <view class="gameList_title">{{post.gameName}}</view>
+  <view class="gameList_continer_box">
+    <swiper autoplay indicator-dots indicator-active-color="#DCDCDC" circular class="swiper_container">
+      <block wx:for="{{post.images}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item}}" mode="aspectFit" class="swiper_image" bind:tap="previewImage" data-url="{{item}}"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="gameList_content">
+    <text user-select>{{post.content}}</text>
+  </view>
+</view>
+<button bindtap="bookMark" data-id="{{post.id}}">收藏</button>
+
+<view class="comment">
+  <text style="margin-left: 10px;">评论 {{commentNum}}</text>
+</view>
+
+<block wx:if="{{commentNum === 0}}">
+  <view class="no-comment">暂无更多评论</view>
+</block>
+
+<block wx:else>
+  <view class="comment-list">
+    <block wx:for="{{comments}}" wx:key="index">
+      <view class="comment-item">
+        <text class="comment-user">{{item.user}}:</text>
+        <text class="comment-content">{{item.content}}</text>
+        <text class="comment-time">{{item.time}}</text>
+      </view>
+    </block>
+  </view>
+</block>
+
+<view class="comment-input">
+  <input
+    placeholder="请输入评论"
+    bindinput="onCommentInput"
+    value="{{commentContent}}"
+  />
+  <button bindtap="submitComment" size="mini">发送</button>
+</view>
+
+

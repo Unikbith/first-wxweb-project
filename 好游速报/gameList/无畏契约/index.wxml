@@ -1,0 +1,57 @@
+<view class="gameList_continer">
+  <view class="gameList_title">无畏契约:与朋友激情开黑！</view>
+  <view class="gameList_continer_box">
+    <swiper autoplay indicator-dots indicator-active-color="#DCDCDC" circular class="swiper_container">
+      <swiper-item>
+        <image src="/images/无畏契约/1.jpg" mode="aspectFit" class="swiper_image" bind:tap="previewImage" data-url="/images/无畏契约/1.jpg"/>
+      </swiper-item>
+      <swiper-item>
+        <image src="/images/无畏契约/2.jpg" mode="aspectFit" class="swiper_image" bind:tap="previewImage" data-url="/images/无畏契约/2.jpg"/>
+      </swiper-item>
+      <swiper-item>
+        <image src="/images/无畏契约/3.jpg" mode="aspectFit" class="swiper_image" bind:tap="previewImage" data-url="/images/无畏契约/3.jpg"/>
+      </swiper-item>
+      <swiper-item>
+        <image src="/images/无畏契约/4.jpg" mode="aspectFit" class="swiper_image" bind:tap="previewImage" data-url="/images/无畏契约/4.jpg"/>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="gameList_content">
+    <text style="height: auto; width: 345px;" user-select>
+      7月12日，5V5英雄战术射击游戏《无畏契约》正式上线！
+      这款由《英雄联盟》开发商拳头游戏研发的射击游戏受到全球玩家的喜爱，并斩获2022TGA最佳电竞游戏殊荣。而从今天开始，所有国服玩家也都可以免费进入游戏，无限畅玩！
+
+      《无畏契约》国服上线庆典也正式开启，超高性价比的紫阙金琅皮肤套装、国服通行证同步上线，网吧特权全面开放。此外，《无畏契约》与《英雄联盟》、《英雄联盟手游》、《金铲铲之战》等英雄联盟多产品的生态联动，精彩的CG、TVC、直播表演赛等也同步上演，精彩不断！
+    </text>
+  </view>
+</view>
+<button bindtap="bookMark" data-id="{{post.id}}">收藏</button>
+
+<view class="comment">
+  <text style="margin-left: 10px;">评论 {{commentNum}}</text>
+</view>
+
+<block wx:if="{{commentNum === 0}}">
+  <view class="no-comment">暂无更多评论</view>
+</block>
+
+<block wx:else>
+  <view class="comment-list">
+    <block wx:for="{{comments}}" wx:key="index">
+      <view class="comment-item">
+        <text class="comment-user">{{item.user}}:</text>
+        <text class="comment-content">{{item.content}}</text>
+        <text class="comment-time">{{item.time}}</text>
+      </view>
+    </block>
+  </view>
+</block>
+
+<view class="comment-input">
+  <input
+    placeholder="请输入评论"
+    bindinput="onCommentInput"
+    value="{{commentContent}}"
+  />
+  <button bindtap="submitComment" size="mini">发送</button>
+</view>

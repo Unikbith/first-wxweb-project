@@ -1,0 +1,7 @@
+<view class="header">
+    <text>我的关注</text>
+  </view>
+
+<block wx:if="{{myAttention.length === 0}}">
+    <view class="no-comment">暂无关注</view>
+</block>

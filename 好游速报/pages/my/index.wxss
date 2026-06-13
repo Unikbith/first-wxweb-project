@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 110px;
+  } 
+.container_box {
+    position: relative;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+}
+.container_box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 13%;
+    width: 80%;
+    height: 1px;
+    background-color: #D3D3D3;
+}
+.headshot{
+    position: relative;
+    top: 20rpx;
+    left: 20rpx; 
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 80rpx;
+}
+.username{
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 100px;
+    background-color: #98F5FF;
+    border: none;
+}
+.icon{
+    height: 40rpx;
+    width: 40rpx;
+    padding-top:24rpx;
+    padding-left: 30rpx;
+}
+.icon1{
+    height: 45rpx;
+    width: 40rpx;
+    margin-top:24rpx;
+    margin-left: 660rpx;
+}
+.option{
+    position: absolute;
+    margin-top: 13px;
+    margin-left: 55px;
+    font-size: 15px;
+}

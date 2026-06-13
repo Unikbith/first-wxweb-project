@@ -1,0 +1,55 @@
+<view class="gameList_continer">
+  <view class="gameList_title">三角洲行动:体验真实战场</view>
+  <view class="gameList_continer_box">
+    <swiper autoplay indicator-dots indicator-active-color="#DCDCDC" circular class="swiper_container">
+    <swiper-item>
+        <image src="/images/三角洲行动/1.jpg" mode="aspectFit" class="swiper_image" bind:tap="previewImage" data-url="/images/三角洲行动/1.jpg"/>
+    </swiper-item>
+    <swiper-item>
+        <image src="/images/三角洲行动/2.jpg" mode="aspectFit" class="swiper_image" bind:tap="previewImage" data-url="/images/三角洲行动/2.jpg"/>
+    </swiper-item>
+    <swiper-item>
+        <image src="/images/三角洲行动/3.jpg" mode="aspectFit" class="swiper_image" bind:tap="previewImage" data-url="/images/三角洲行动/3.jpg"/>
+    </swiper-item>
+    <swiper-item>
+        <image src="/images/三角洲行动/4.jpg" mode="aspectFit" class="swiper_image" bind:tap="previewImage" data-url="/images/三角洲行动/4.jpg"/>
+    </swiper-item>
+    </swiper>
+  </view>
+  <view class="gameList_content">
+  <text style="height: auto;  width: 345px;" user-select>
+    《三角洲行动》是一款全新的基于特种干员的多玩法第一人称战术射击游戏，在游戏中，玩家将扮演前三角洲队员创立的全球反恐特勤组G.T.I.的精英特战干员，前往神秘的阿萨拉地区调查哈夫克公司的非法活动。游戏提供了多种战术道具与装备，玩家需要与队友紧密协作，灵活制定战术，挑战前大的敌人，完成各种看似不可能的极限任务。此外，游戏还提供了重温1993年那场秘密行动——《黑鹰坠落》的机会，《三角洲行动》电脑版让玩家从第一视角领略电影好莱坞战争美学。
+    《三角洲行动》电脑版的玩法丰富多样，包括危险行动、全面战场和黑鹰坠落-战役等，为玩家提供了不同的挑战和乐趣。游戏还强调团队协作和战术制定，使得玩家需要与队友紧密配合才能取得胜利，这增强了游戏的互动性和社交性。同时，游戏具有大规模的战斗，注重特种作战任务的执行，提供多样化的玩法，并侧重兵器与道具的运用，带给玩家刺激的战斗体验和紧张的团队合作。
+  </text>
+    </view>
+</view>
+<button bindtap="bookMark" data-id="{{post.id}}">收藏</button>
+
+<view class="comment">
+  <text style="margin-left: 10px;">评论 {{commentNum}}</text>
+</view>
+
+<block wx:if="{{commentNum === 0}}">
+  <view class="no-comment">暂无更多评论</view>
+</block>
+
+<block wx:else>
+  <view class="comment-list">
+    <block wx:for="{{comments}}" wx:key="index">
+      <view class="comment-item">
+        <text class="comment-user">{{item.user}}:</text>
+        <text class="comment-content">{{item.content}}</text>
+        <text class="comment-time">{{item.time}}</text>
+      </view>
+    </block>
+  </view>
+</block>
+
+<view class="comment-input">
+  <input
+    placeholder="请输入评论"
+    bindinput="onCommentInput"
+    value="{{commentContent}}"
+  />
+  <button bindtap="submitComment" size="mini">发送</button>
+</view>

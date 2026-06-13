@@ -1,0 +1,45 @@
+
+<view class="container" style="background-color: #98F5FF">
+    <image src="{{userInfo.avatarUrl}}" mode="aspectFill" class="headshot" bind:tap="getUserProfile"/>
+    <button class="username" style="color: white;" size="mini" bind:tap="getUserProfile">{{userInfo.nickName}}</button>
+</view>
+
+<navigator url="/pages/myPosts/index">
+<view class="container_box">
+    <image src="/images/我的贴子.png" mode="aspectFit" class="icon"/>
+    <text class="option">我的帖子</text>
+    <view style="position: absolute;">
+      <image src="/images/箭头 右.png" mode="aspectFit" class="icon1"/>
+    </view>
+</view>
+</navigator>
+
+<navigator url="/pages/myMarks/index">
+<view class="container_box">
+    <image src="/images/我的评论.png" mode="aspectFit" class="icon"/>
+    <text class="option">我的评论</text>
+    <view style="position: absolute;">
+      <image src="/images/箭头 右.png" mode="aspectFit" class="icon1"/>
+    </view>
+</view>
+</navigator>
+
+<navigator url="/pages/myBookMarks/index">
+<view class="container_box">
+    <image src="/images/我的收藏.png" mode="aspectFit" class="icon"/>
+    <text class="option">我的收藏</text>
+    <view style="position: absolute;">
+      <image src="/images/箭头 右.png" mode="aspectFit" class="icon1"/>
+    </view>
+</view>
+</navigator>
+
+<navigator url="/pages/myAttention/index">
+<view class="container_box">
+    <image src="/images/我的关注.png" mode="aspectFit" class="icon"/>
+    <text class="option">我的关注</text>
+    <view style="position: absolute;">
+      <image src="/images/箭头 右.png" mode="aspectFit" class="icon1"/>
+    </view>
+</view>
+</navigator>

@@ -1,0 +1,55 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 110px;
+} 
+.container_box{
+    position: relative;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100px;
+    background-color: #f6f6ff;
+}
+.container_box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 3%;
+    width: 90%;
+    height: 1px;
+    background-color: #D3D3D3;
+}
+.container_swiper{
+position: relative;
+}
+.text_overlay {
+    position: absolute;
+    bottom: 14px;
+    left: 13%;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+.gameImage{
+    height: 70px;
+    width: 150px;
+    border-radius: 22px;
+}
+.news{
+    top: 20px;
+    left: 140px;
+    position: absolute;
+    background-color:#bef3f3;
+    color: #2e9292;
+}
+.content{
+    position: absolute;
+    word-wrap: break-word;  /* 字体换行*/
+    white-space: normal;
+    top: 40px;
+    left: 140px;
+    max-width: calc(100% - 140px);
+    color:#b9b3b3;
+}

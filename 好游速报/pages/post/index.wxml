@@ -1,0 +1,29 @@
+<!--pages/post/index.wxml-->
+<view style="display: flex; justify-content: center;margin-top: 10px;">
+    <textarea auto-height placeholder="请输入标题，最大字数为30" maxlength="30" style="font-family:'Courier New', Courier, monospace" bindinput="titleInput"/>
+</view>
+
+<view style="display: flex; justify-content: center;margin-top: 15px;">
+    <textarea auto-height placeholder="请输入游戏名，最大字数为30" maxlength="30" style="font-family:'Courier New', Courier, monospace" bindinput="gameInput"/>
+</view>
+
+<view class="container_box">
+  <textarea class="content"  placeholder="输入正文" style="font-family:'Courier New', Courier, monospace" bindinput="contentInput" maxlength="-1"/>
+</view>
+
+<view class="image-container">
+  <block wx:for="{{imagePaths}}" wx:key="index">
+    <image
+      src="{{item}}"
+      mode="aspectFill"
+      bindtap="previewImage"
+      data-index="{{index}}"
+      class="image-item"
+    />
+  </block>
+</view>
+<view class="button-container">
+  <button class="button-item" bindtap="selectImage" style="color: #98F5FF;background-color: #F0F8FF;">选择图片</button>
+  <button class="button-item" bindtap="send" style="color: #F0F8FF; background-color:#98F5FF;">发帖</button>
+</view>
+<button class="button-item" bindtap="onTapSelectIcon" style="color: #F0F8FF; background-color:#98F5FF;">选择图标</button>
